@@ -1,5 +1,4 @@
 game.StarterGui:SetCore("ChatMakeSystemMessage",  { Text = "[Asteroid] my crappy script", Color = Color3.fromRGB(255, 165, 0), Font = Enum.Font.Merriweather, FontSize = Enum.FontSize.Size24 } )
-game.StarterGui:SetCore("ChatMakeSystemMessage",  { Text = "[Dnut] $.lucid trashy killaura", Color = Color3.fromRGB(255, 165, 0), Font = Enum.Font.Merriweather, FontSize = Enum.FontSize.Size24 } )
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 local Window = Rayfield:CreateWindow({
