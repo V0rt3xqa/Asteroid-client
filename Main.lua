@@ -28,48 +28,11 @@ local Window = Rayfield:CreateWindow({
 	}
 })
 
-local player = game:GetService("Players")
-local lplr = player.LocalPlayer
-local cam = workspace.CurrentCamera
-local KnitClient = debug.getupvalue(require(lplr.PlayerScripts.TS.knit).setup, 6)
-local SwordCont = KnitClient.Controllers.SwordController
-
-local aura = false
-local DistVal = {["Value"] = 14}
-function Aura()
-	for i,v in pairs(game.Players:GetChildren()) do
-		if v.Character and v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("HumanoidRootPart") then
-			local mag = (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-			if mag <= DistVal["Value"] and v.Team ~= game.Players.LocalPlayer.Team and v.Character:FindFirstChild("Humanoid") then
-				if v.Character.Humanoid.Health > 0 then
-					aura = true
-                    SwordCont:swingSwordAtMouse()
-end
-end
-end
-end
-end
 
 local KillauraEnabled = false
 
 
 local Tab = Window:CreateTab("Blantant", 4483362458) -- Title, Image
-
-	local Toggle = Tab:CreateToggle({
-		Name = "trashy Killaura",
-		CurrentValue = false,
-		Flag = "Killaura", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-		Callback = function(Value)
-    if KillauraEnabled == false then
-      KillauraEnabled = true
-      repeat wait(0.1)
-        Aura()
-      until KillauraEnabled == false
-      else
-      KillauraEnabled = false
-      end
-		end,
-	})
 
 local Button = Tab:CreateButton({
 	Name = "Inf jump",
